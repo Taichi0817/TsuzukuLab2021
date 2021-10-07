@@ -25,6 +25,11 @@ class CreateIdealJJY(object):
         self.tmp3 = np.zeros((60, 8))
 
     def create_signal(self):
+        """
+
+        Returns:
+            object: 
+        """
         for i in range(60):
             tmp1 = i
             if tmp1 >= 50:

@@ -1,25 +1,51 @@
+# %%
 import requests
+import time
+import datetime
 
 import math
-
 import matplotlib.pyplot as plt
 import numpy as np
 
-import assets.create_ideal_jjy
+from assets import calculate_correlation
 from assets import create_ideal_jjy
 from assets import line_notify
-
-
+from assets import make_noise
 
 
 create = create_ideal_jjy.CreateIdealJJY()
-create.create_signal()
-print(create.ideal_signal)
+ideal_signal = create.create_signal()
+number_of_simulations = int(60000)
+cc = np.zeros(60) # 相関演算の結果
+error = 0
+ber = np.zeros((15, int(number_of_simulations/60)))
+for i in range(int(number_of_simulations/60)):
+    for cnr in range(15):
+        std_dev = make_noise.out_standard_deviation(cnr)
+        noise_signal = make_noise.make_noise(std_dev, ideal_signal)
+        for k in range(60):
+            for l in range(60): #   相関を計算
+                for m in range(8): #    相関を計算
+                    temp = noise_signal[k][m] * ideal_signal[l][m]
+                    cc[l] += temp
+            if cc[k] != np.amax(cc):
+                error += 1
+            # dfResult = np.inserdfdfResult, i, cC, axis=1)
+            cc = np.zeros(60)
+        ber[cnr, i] = error
+        error = 0
+print(ber)
+print(np.mean(ber, axis=1))
+b = np.sum(ber, axis=1)
+c = b/number_of_simulations
+fig = plt.figure()
+ax = plt.gca()
+ax.set_yscale('log')
+plt.grid(which="both")
+plt.plot(c)
 
-
-
-
-
-
-if __name__ == '__main__':
-    line_notify()
+plt.show()
+dt_now = datetime.datetime.now()
+name = dt_now.strftime('%Y年%m月%d日')
+fig.savefig("img_{}.png".format(name))
+line_notify.main()
