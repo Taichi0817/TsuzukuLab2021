@@ -15,7 +15,7 @@ from assets import make_noise
 
 create = create_ideal_jjy.CreateIdealJJY()
 ideal_signal = create.create_signal()
-number_of_simulations = int(60000)
+number_of_simulations = int(600)
 cc = np.zeros(60) # 相関演算の結果
 error = 0
 ber = np.zeros((15, int(number_of_simulations/60)))
@@ -47,5 +47,5 @@ plt.plot(c)
 plt.show()
 dt_now = datetime.datetime.now()
 name = dt_now.strftime('%Y年%m月%d日')
-fig.savefig("img_{}.png".format(name))
+fig.savefig("image/img_{}.png".format(name))
 line_notify.main()
