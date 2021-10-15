@@ -15,19 +15,18 @@ from assets import make_noise
 
 create = create_ideal_jjy.CreateIdealJJY()
 ideal_signal = create.create_signal()
-number_of_simulations = int(600)
+number_of_simulations = 60000
 cc = np.zeros(60) # 相関演算の結果
 error = 0
-ber = np.zeros((15, int(number_of_simulations/60)))
-for i in range(int(number_of_simulations/60)):
+ber = np.zeros((15, number_of_simulations//60))
+for i in range(number_of_simulations//60):
     for cnr in range(15):
         std_dev = make_noise.out_standard_deviation(cnr)
         noise_signal = make_noise.make_noise(std_dev, ideal_signal)
         for k in range(60):
             for l in range(60): #   相関を計算
                 for m in range(8): #    相関を計算
-                    temp = noise_signal[k][m] * ideal_signal[l][m]
-                    cc[l] += temp
+                    cc[l] += noise_signal[k][m] * ideal_signal[l][m]
             if cc[k] != np.amax(cc):
                 error += 1
             # dfResult = np.inserdfdfResult, i, cC, axis=1)
