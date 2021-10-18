@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0874101-7176-4eab-b1cd-ae19648b8286" name="変更" comment="">
+    <list default="true" id="b0874101-7176-4eab-b1cd-ae19648b8286" name="変更" comment="連続できた">
       <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/simulation_correlation_a_minute/image/img_2021年10月11日.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/simulation_correlation_a_minute/image/img_2021年10月12日.png" afterDir="false" />
@@ -74,9 +74,6 @@
       <module name="TsuzukuLab2021" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="C:\Users\ofdm\anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/simulation_correlation_a_minute" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -126,8 +123,16 @@
       <workItem from="1633676188633" duration="5083000" />
       <workItem from="1633918698516" duration="20671000" />
       <workItem from="1634104308522" duration="8429000" />
-      <workItem from="1634277433604" duration="5127000" />
+      <workItem from="1634277433604" duration="10951000" />
     </task>
+    <task id="LOCAL-00001" summary="連続できた">
+      <created>1634282632876</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634282632876</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,9 +152,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="連続できた" />
+    <option name="LAST_COMMIT_MESSAGE" value="連続できた" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TsuzukuLab2021$simulation.coverage" NAME="simulation_minutes のカバレッジ結果" MODIFIED="1633682240707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulation_correlation_minutes" />
-    <SUITE FILE_PATH="coverage/TsuzukuLab2021$simulation_minutes.coverage" NAME="simulation_minutes のカバレッジ結果" MODIFIED="1634282142060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulation_correlation_minutes" />
+    <SUITE FILE_PATH="coverage/TsuzukuLab2021$simulation_minutes.coverage" NAME="simulation_minutes のカバレッジ結果" MODIFIED="1634524771402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulation_correlation_minutes" />
   </component>
 </project>
