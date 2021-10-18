@@ -20,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jupyter Notebook" />
         <option value="Python Script" />
       </list>
     </option>
@@ -40,14 +41,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/simulation_correlation_minutes/simulation_minutes.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/correkation-time_plot/ccorelation_time_plot.py" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ofdm\Documents\TaichiMorioka\TsuzukuLab2021\correkation-time_plot" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ofdm\Documents\TaichiMorioka\TsuzukuLab2021\JJY_TaichiMorioka2021\image" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.simulation_minutes">
+  <component name="RunManager" selected="Python.ccorelation_time_plot">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="TsuzukuLab2021" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,10 +75,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ccorelation_time_plot" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="TsuzukuLab2021" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\ofdm\anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/correkation-time_plot" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/correkation-time_plot/ccorelation_time_plot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="simulation" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="TsuzukuLab2021" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\ofdm\anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/simulation_correlation_a_minute" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -89,28 +119,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="simulation_minutes" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="TsuzukuLab2021" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\ofdm\anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/simulation_correlation_minutes" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/simulation_correlation_minutes/simulation_minutes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.simulation" />
+      <item itemvalue="Python.ccorelation_time_plot" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -123,7 +135,8 @@
       <workItem from="1633676188633" duration="5083000" />
       <workItem from="1633918698516" duration="20671000" />
       <workItem from="1634104308522" duration="8429000" />
-      <workItem from="1634277433604" duration="10951000" />
+      <workItem from="1634277433604" duration="17956000" />
+      <workItem from="1634543216346" duration="2807000" />
     </task>
     <task id="LOCAL-00001" summary="連続できた">
       <created>1634282632876</created>
@@ -157,6 +170,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TsuzukuLab2021$simulation.coverage" NAME="simulation_minutes のカバレッジ結果" MODIFIED="1633682240707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulation_correlation_minutes" />
-    <SUITE FILE_PATH="coverage/TsuzukuLab2021$simulation_minutes.coverage" NAME="simulation_minutes のカバレッジ結果" MODIFIED="1634524771402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulation_correlation_minutes" />
+    <SUITE FILE_PATH="coverage/TsuzukuLab2021$simulation_minutes.coverage" NAME="ccorelation_time_plot のカバレッジ結果" MODIFIED="1634545919037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/correkation-time_plot" />
   </component>
 </project>

@@ -15,11 +15,11 @@ from assets import line_notify
 
 start = time.time()
 n = 120
-noc = 3 #number_of_consecutive何分連続するか
+noc = 1 #number_of_consecutive何分連続するか
 roc = 10 #range_of_cnr   CNの範囲設定
 create = create_ideal_jjy.CreateIdealJJY(n)
 ideal_signal = create.create_signal()
-number_of_simulations = 10000
+number_of_simulations = 1000
 cc = np.zeros(60)
 error = 0
 ber = np.zeros((roc, number_of_simulations//60))
@@ -43,11 +43,15 @@ b = np.sum(ber, axis=1)
 c = b / number_of_simulations
 dt_now = datetime.datetime.now()
 elapsed_time = time.time() - start
+elapsed_time = round(elapsed_time)
+td = datetime.timedelta(seconds=elapsed_time)
 fig = plt.figure()
 ax = plt.gca()
 ax.set_yscale('log')
 plt.grid(which="both")
-plt.title('{0}分連続、{1}回、実行時間{2:.2}秒'.format(noc, number_of_simulations, elapsed_time), fontname="MS Gothic", fontsize=18)
+plt.title('{0}分連続、{1}回、実行時間{2}'.format(\
+    noc, number_of_simulations, td),\
+    fontname="MS Gothic", fontsize=18)
 plt.ylabel('SER', fontsize=14)
 plt.xlabel('C/N[dB]', fontsize=14)
 plt.plot(c)
@@ -59,4 +63,4 @@ name_of_image = "img_{0}分連続_{1}回_{2}.png".format(noc, number_of_simulati
 fig.savefig("images/{}".format(name_of_image))
 line_notify.main_gazo(name_of_image)
 
-print ("elapsed_time:{:.2f}".format(elapsed_time) + "[sec]")
+print ("elapsed_time:{}".format(td))
