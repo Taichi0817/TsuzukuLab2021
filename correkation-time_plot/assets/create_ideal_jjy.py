@@ -30,8 +30,10 @@ class CreateIdealJJY(object):
         Returns:
             object: 
         """
-        for i in range(60):
+        for i in range(120):
             tmp1 = i
+            if tmp1 >= 60:
+                tmp1 -= 60
             if tmp1 >= 50:
                 self.ideal_signal[i, 0] = 1
                 self.ideal_signal[i, 2] = 1

@@ -15,11 +15,11 @@ from assets import line_notify
 
 start = time.time()
 n = 120
-noc = 1 #number_of_consecutive何分連続するか
-roc = 10 #range_of_cnr   CNの範囲設定
+noc =  2 #number_of_consecutive何分連続するか
+roc = 12     # range_of_cnr   CNの範囲設定
 create = create_ideal_jjy.CreateIdealJJY(n)
 ideal_signal = create.create_signal()
-number_of_simulations = 1000
+number_of_simulations = 10000
 cc = np.zeros(60)
 error = 0
 ber = np.zeros((roc, number_of_simulations//60))
@@ -37,8 +37,8 @@ for i in range(number_of_simulations//60):
             cc = np.zeros(60)
         ber[cnr, i] = error
         error = 0
-print(ber)
-print(np.mean(ber, axis=1))
+# print(ber)
+# print(np.mean(ber, axis=1))
 b = np.sum(ber, axis=1)
 c = b / number_of_simulations
 dt_now = datetime.datetime.now()
@@ -64,3 +64,4 @@ fig.savefig("images/{}".format(name_of_image))
 line_notify.main_gazo(name_of_image)
 
 print ("elapsed_time:{}".format(td))
+print(c)

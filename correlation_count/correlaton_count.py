@@ -20,7 +20,7 @@ count = 0
 cC = np.zeros(60)  # 相関演算の結果
 tmp = 0
 Error = 0  # 相関演算した時の誤り数
-temp = [1, 2, 5, 10, 20, 30, 60]
+temp = [20]
 
 for a in temp:
     print('{}分連続'.format(a))
@@ -30,6 +30,7 @@ for a in temp:
                 for co in range(a - 1, -1, -1):
                     cC[k] += ideal_signal[j+co][l] * ideal_signal[k+co][l]
         count += np.count_nonzero(cC == a * 4)
+        print(count)
         cC = np.zeros(60)
     print('{:.2}'.format(count/60))
     count = 0
