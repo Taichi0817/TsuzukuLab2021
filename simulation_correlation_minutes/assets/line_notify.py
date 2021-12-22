@@ -8,12 +8,11 @@ def main(message='演算終了'):
     headers = {'Authorization': 'Bearer ' + line_notify_token}
     requests.post(line_notify_api, data=payload, headers=headers)
 
-def main_gazo(name_of_image):
+def main_gazo(name_of_image, message):
     url = "https://notify-api.line.me/api/notify"
     token = "akHLNAuC8XmSHLXRuOMChlMe3FpfmU2E8KoWXzf21wL"
     headers = {"Authorization" : "Bearer "+ token}
 
-    message = '演算終了'
     payload = {"message" :  message}
     #imagesフォルダの中のgazo.jpg
     files = {"imageFile":open('./images/{}'.format(name_of_image),'rb')}

@@ -15,11 +15,11 @@ from assets import line_notify
 
 start = time.time()
 n = 120
-noc =  2 #number_of_consecutive何分連続するか
+noc =  30 #number_of_consecutive何分連続するか
 roc = 12     # range_of_cnr   CNの範囲設定
 create = create_ideal_jjy.CreateIdealJJY(n)
 ideal_signal = create.create_signal()
-number_of_simulations = 10000
+number_of_simulations = 100
 cc = np.zeros(60)
 error = 0
 ber = np.zeros((roc, number_of_simulations//60))
@@ -61,7 +61,7 @@ plt.show()
 name = dt_now.strftime('%Y,%m,%d,_%H,%M')
 name_of_image = "img_{0}分連続_{1}回_{2}.png".format(noc, number_of_simulations, name)
 fig.savefig("images/{}".format(name_of_image))
-line_notify.main_gazo(name_of_image)
+line_notify.main_gazo(name_of_image, c)
 
 print ("elapsed_time:{}".format(td))
 print(c)
