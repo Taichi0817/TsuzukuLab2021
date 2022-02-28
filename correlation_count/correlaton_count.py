@@ -20,7 +20,7 @@ count = 0
 cC = np.zeros(60)  # 相関演算の結果
 tmp = 0
 Error = 0  # 相関演算した時の誤り数
-temp = [20]
+temp = [1]
 
 for a in temp:
     print('{}分連続'.format(a))

@@ -1,6 +1,9 @@
 import requests
 import os
 
+
+from . import secret
+
 def main(message='演算終了'):
     line_notify_token = 'akHLNAuC8XmSHLXRuOMChlMe3FpfmU2E8KoWXzf21wL'
     line_notify_api = 'https://notify-api.line.me/api/notify'
@@ -10,7 +13,7 @@ def main(message='演算終了'):
 
 def main_gazo(name_of_image, message):
     url = "https://notify-api.line.me/api/notify"
-    token = "akHLNAuC8XmSHLXRuOMChlMe3FpfmU2E8KoWXzf21wL"
+    token = secret.secret
     headers = {"Authorization" : "Bearer "+ token}
 
     payload = {"message" :  message}
