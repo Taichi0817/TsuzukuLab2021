@@ -15,12 +15,12 @@ from assets import make_noise
 
 create = create_ideal_jjy.CreateIdealJJY()
 ideal_signal = create.create_signal()
-number_of_simulations = 600
+number_of_simulations = 6000
 cc = np.zeros(60) # 相関演算の結果
 error = 0
-ber = np.zeros((15, number_of_simulations//60))
+ber = np.zeros((20, number_of_simulations//60))
 for i in range(number_of_simulations//60):
-    for cnr in range(5):
+    for cnr in range(20):
         std_dev = make_noise.out_standard_deviation(cnr)
         noise_signal = make_noise.make_noise(std_dev, ideal_signal)
         for k in range(60):
