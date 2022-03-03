@@ -12,7 +12,7 @@ def make_noise(std_div, ideal_signal, n):
     noise_signal = np.zeros((n, 8))
     for i in range(n):
         e[i] = np.random.normal(loc=0, scale=std_div, size=8)
-        noise_signal[i] = ideal_signal[i] + e[i]
+        noise_signal[i] = ideal_signal[i] + np.sqrt(2) * e[i]
     return noise_signal
 
 def out_standard_deviation(cnr):
