@@ -15,23 +15,24 @@ from assets import line_notify
 
 start = time.time()
 n = 120
-noc =  2 #number_of_consecutive何分連続するか
-roc = 20    # range_of_cnr   CNの範囲設定
+noc =  10 #number_of_consecutive何分連続するか
+noc -= 1
+roc = 10    # range_of_cnr   CNの範囲設定
 create = create_ideal_jjy.CreateIdealJJY(n)
 ideal_signal = create.create_signal()
-number_of_simulations = 10000
+number_of_simulations = 100000
 cc = np.zeros(60)
 error = 0
 ber = np.zeros((roc, number_of_simulations//60))
 for i in range(number_of_simulations//60):
     for cnr in range(roc):
-        std_dev = make_noise.out_standard_deviation((cnr/2))
+        std_dev = make_noise.out_standard_deviation(cnr - 4)
         noise_signal = make_noise.make_noise(std_dev, ideal_signal, n)
         for j in range(60):
             for k in range(60):
                 for l in range(8):
                     for co in range(noc, -1, -1):
-                        cc[k] += ideal_signal[j+co][l] * noise_signal[k+co][l]
+                        cc[k] += noise_signal[j+co][l] * ideal_signal[k+co][l]
             if cc[j] != np.amax(cc):
                 error += 1
             cc = np.zeros(60)
@@ -40,8 +41,8 @@ for i in range(number_of_simulations//60):
 # print(ber)
 # print(np.mean(ber, axis=1))
 b = np.sum(ber, axis=1)
-c = b / 10000
-db = np.arange(0, 20, 1)
+c = b / number_of_simulations
+db = np.arange(-4, 5, 1)
 dt_now = datetime.datetime.now()
 elapsed_time = time.time() - start
 elapsed_time = round(elapsed_time)
@@ -51,7 +52,7 @@ ax = plt.gca()
 ax.set_yscale('log')
 plt.grid(which="both")
 plt.title('{0}分連続、{1}回、実行時間{2}'.format(\
-    noc, number_of_simulations, td),\
+    noc+1, number_of_simulations, td),\
     fontname="MS Gothic", fontsize=18)
 plt.ylabel('SER', fontsize=14)
 plt.xlabel('C/N[dB]', fontsize=14)
